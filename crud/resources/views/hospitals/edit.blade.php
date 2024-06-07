@@ -77,16 +77,15 @@
             <label for="city_id">City</label>
             <select class="form-control" id="city_id" name="city_id">
                 @foreach($cities as $city)
-                    <option value="{{ $city->id }}">{{ $city->name }}</option>
+                    <option value="{{ $city->id }}" {{ $hospital->city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                 @endforeach
             </select>
         </div>
-        
         <div class="form-group">
             <label for="country_id">Country</label>
             <select class="form-control" id="country_id" name="country_id">
                 @foreach($countries as $country)
-                    <option value="{{ $country->id }}">{{ $country->name }}</option>
+                    <option value="{{ $country->id }}" {{ $hospital->country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                 @endforeach
             </select>
         </div>

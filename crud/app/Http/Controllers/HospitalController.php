@@ -22,8 +22,8 @@ class HospitalController extends Controller
         $cities = City::all();
         $countries = Country::all();
         return view('hospitals.create', compact('cities', 'countries'));
-    ;
     }
+    
 
     public function store(Request $request)
     {
@@ -63,7 +63,7 @@ class HospitalController extends Controller
     public function edit(Hospital $hospital)
     {
        
-        $hospital = Hospital::find($id);
+        // $hospital = Hospital::find();
         $cities = City::all();
         $countries = Country::all();
         return view('hospitals.edit', compact('hospital', 'cities', 'countries'));
@@ -102,11 +102,11 @@ class HospitalController extends Controller
     public function destroy(Hospital $hospital)
     {
         $hospital->delete();
+        
         return redirect()->route('hospitals.index')->with('success', 'Hospital deleted successfully.');
     }
 
-
-   
+    
 
 }
 
